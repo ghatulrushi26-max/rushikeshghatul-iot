@@ -47,9 +47,8 @@ const char* ssid     = "IoT";
 const char* password = "12345678";
 
 // ================= BACKEND SERVER CONFIGURATION =================
-// Replace with your Render URL (e.g. "https://your-app-name.onrender.com")
-// OR your local computer IP for local testing (e.g. "http://192.168.1.100:3000")
-const char* serverBaseUrl = "https://your-iot-app.onrender.com";
+// Deployed Live Render Application URL:
+const char* serverBaseUrl = "https://rushikeshghatul-iot.onrender.com";
 
 // ================= PIN DEFINITIONS =================
 #define DHTPIN  14    // D5 is GPIO 14
@@ -175,12 +174,23 @@ void sendSensorData() {
   Serial.println("\n--- DHT11 Sensor Reading ---");
   Serial.printf("Temperature: %.1f °C | Humidity: %.1f %%\n", temperature, humidity);
 
-  WiFiClient client;
-  HTTPClient http;
-
   String url = String(serverBaseUrl) + "/api/sensor-data";
+  HTTPClient http;
+  http.setTimeout(12000); // 12s timeout for cloud requests
+
+  bool beginSuccess = false;
+  std::unique_ptr<BearSSL::WiFiClientSecure> secureClient;
+  WiFiClient plainClient;
+
+  if (url.startsWith("https://")) {
+    secureClient.reset(new BearSSL::WiFiClientSecure);
+    secureClient->setInsecure(); // Disable certificate checks for Render Cloud
+    beginSuccess = http.begin(*secureClient, url);
+  } else {
+    beginSuccess = http.begin(plainClient, url);
+  }
   
-  if (http.begin(client, url)) {
+  if (beginSuccess) {
     http.addHeader("Content-Type", "application/json");
 
     // Construct JSON Payload
@@ -193,7 +203,7 @@ void sendSensorData() {
 
     int httpResponseCode = http.POST(jsonPayload);
     if (httpResponseCode > 0) {
-      Serial.printf("✅ Sensor data posted! HTTP Response: %d\n", httpResponseCode);
+      Serial.printf("✅ Sensor data posted to Render! HTTP Response: %d\n", httpResponseCode);
     } else {
       Serial.printf("❌ Error sending sensor data. Code: %d, Error: %s\n", httpResponseCode, http.errorToString(httpResponseCode).c_str());
     }
@@ -207,12 +217,23 @@ void sendSensorData() {
 // Fetch Device Status (LCD Text & LED Automation)
 // -------------------------------------------------------------
 void fetchDeviceStatus() {
-  WiFiClient client;
-  HTTPClient http;
-
   String url = String(serverBaseUrl) + "/api/device/status";
+  HTTPClient http;
+  http.setTimeout(12000); // 12s timeout for cloud requests
 
-  if (http.begin(client, url)) {
+  bool beginSuccess = false;
+  std::unique_ptr<BearSSL::WiFiClientSecure> secureClient;
+  WiFiClient plainClient;
+
+  if (url.startsWith("https://")) {
+    secureClient.reset(new BearSSL::WiFiClientSecure);
+    secureClient->setInsecure(); // Disable certificate checks for Render Cloud
+    beginSuccess = http.begin(*secureClient, url);
+  } else {
+    beginSuccess = http.begin(plainClient, url);
+  }
+
+  if (beginSuccess) {
     int httpResponseCode = http.GET();
     if (httpResponseCode == HTTP_CODE_OK) {
       String response = http.getString();
