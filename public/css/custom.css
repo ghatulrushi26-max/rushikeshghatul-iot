@@ -1,0 +1,272 @@
+/* ==========================================================================
+   rushikesh ghatul IoT Platform - Custom Orange Theme & Innovative Widgets
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&family=VT323&display=swap');
+
+:root {
+  --primary-orange: #f97316;
+  --primary-dark-orange: #ea580c;
+  --glow-orange: rgba(249, 115, 22, 0.4);
+  --bg-dark: #090d16;
+  --card-dark: #111827;
+  --card-border: #1f293d;
+}
+
+body {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  background-color: var(--bg-dark);
+  color: #f3f4f6;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Glassmorphism Orange Cards */
+.orange-card {
+  background: rgba(17, 24, 39, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(249, 115, 22, 0.18);
+  border-radius: 1.25rem;
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5), 0 0 15px -3px rgba(249, 115, 22, 0.07);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.orange-card:hover {
+  border-color: rgba(249, 115, 22, 0.38);
+  box-shadow: 0 15px 35px -10px rgba(0, 0, 0, 0.6), 0 0 25px -3px rgba(249, 115, 22, 0.18);
+}
+
+/* Glowing Orange Button */
+.btn-orange {
+  background: linear-gradient(135deg, #f97316 0%, #ea580c 100%);
+  color: #ffffff;
+  font-weight: 600;
+  box-shadow: 0 4px 18px rgba(249, 115, 22, 0.4);
+  transition: all 0.25s ease;
+}
+
+.btn-orange:hover {
+  background: linear-gradient(135deg, #fb923c 0%, #f97316 100%);
+  box-shadow: 0 6px 25px rgba(249, 115, 22, 0.6);
+  transform: translateY(-1.5px);
+}
+
+.btn-orange:active {
+  transform: translateY(0.5px);
+}
+
+/* Seek Bar / Progress Bar Innovations */
+.seek-bar-track {
+  height: 12px;
+  background: #1e293b;
+  border-radius: 9999px;
+  position: relative;
+  overflow: visible;
+}
+
+.seek-bar-fill-temp {
+  height: 100%;
+  border-radius: 9999px;
+  background: linear-gradient(90deg, #38bdf8 0%, #fbbf24 45%, #f97316 75%, #ef4444 100%);
+  transition: width 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+  position: relative;
+}
+
+.seek-bar-fill-temp::after {
+  content: '';
+  position: absolute;
+  right: -6px;
+  top: -4px;
+  width: 20px;
+  height: 20px;
+  background: #ffffff;
+  border: 3px solid #f97316;
+  border-radius: 50%;
+  box-shadow: 0 0 12px #f97316;
+}
+
+.seek-bar-fill-hum {
+  height: 100%;
+  border-radius: 9999px;
+  background: linear-gradient(90deg, #f59e0b 0%, #10b981 50%, #06b6d4 85%, #3b82f6 100%);
+  transition: width 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+  position: relative;
+}
+
+.seek-bar-fill-hum::after {
+  content: '';
+  position: absolute;
+  right: -6px;
+  top: -4px;
+  width: 20px;
+  height: 20px;
+  background: #ffffff;
+  border: 3px solid #06b6d4;
+  border-radius: 50%;
+  box-shadow: 0 0 12px #06b6d4;
+}
+
+/* Semi-circular Radial Gauge */
+.gauge-svg {
+  transform: rotate(-90deg);
+}
+
+.gauge-bg {
+  fill: none;
+  stroke: #1e293b;
+  stroke-width: 12;
+}
+
+.gauge-progress-temp {
+  fill: none;
+  stroke: url(#tempGradient);
+  stroke-width: 12;
+  stroke-linecap: round;
+  transition: stroke-dashoffset 1s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.gauge-progress-hum {
+  fill: none;
+  stroke: url(#humGradient);
+  stroke-width: 12;
+  stroke-linecap: round;
+  transition: stroke-dashoffset 1s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Authentic HD44780 16x2 LCD Simulation */
+.lcd-display-container {
+  background: #141c22;
+  border: 12px solid #2d3748;
+  border-radius: 12px;
+  box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.8), 0 15px 30px rgba(0, 0, 0, 0.6);
+  padding: 1.25rem;
+  position: relative;
+}
+
+.lcd-screen {
+  background-color: #79a83b; /* Classic LCD Green-Yellow Backlight */
+  color: #1a2c07;
+  font-family: 'VT323', monospace;
+  font-size: 2.15rem;
+  line-height: 1.25;
+  letter-spacing: 0.15em;
+  padding: 0.75rem 1.25rem;
+  border-radius: 4px;
+  box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.45);
+  text-shadow: 1px 1px 0px rgba(0,0,0,0.2);
+  min-height: 100px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Subtle dot-matrix overlay */
+.lcd-screen::before {
+  content: " ";
+  position: absolute;
+  top: 0; left: 0; bottom: 0; right: 0;
+  background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.1) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.03), rgba(0, 255, 0, 0.01), rgba(0, 0, 255, 0.03));
+  background-size: 100% 3px, 6px 100%;
+  pointer-events: none;
+}
+
+/* Blue LCD alternative style */
+.lcd-screen.lcd-blue {
+  background-color: #0b49b3;
+  color: #ffffff;
+  text-shadow: 0 0 8px #60a5fa;
+}
+
+/* LED Automation Bulb Graphic */
+.led-bulb-container {
+  position: relative;
+  width: 140px;
+  height: 140px;
+  margin: 0 auto;
+}
+
+.led-bulb {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  transition: all 0.4s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.led-bulb.led-off {
+  background: radial-gradient(circle at 35% 35%, #334155, #0f172a);
+  border: 4px solid #1e293b;
+  box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.8);
+  color: #64748b;
+}
+
+.led-bulb.led-on {
+  background: radial-gradient(circle at 35% 35%, #ffedd5, #f97316 45%, #c2410c 100%);
+  border: 4px solid #fb923c;
+  box-shadow: 0 0 50px rgba(249, 115, 22, 0.8), 0 0 90px rgba(249, 115, 22, 0.5), inset 0 0 25px #ffffff;
+  color: #ffffff;
+  animation: bulbPulsing 2.5s infinite alternate;
+}
+
+@keyframes bulbPulsing {
+  0% { box-shadow: 0 0 40px rgba(249, 115, 22, 0.7), 0 0 80px rgba(249, 115, 22, 0.4); }
+  100% { box-shadow: 0 0 65px rgba(249, 115, 22, 0.95), 0 0 110px rgba(249, 115, 22, 0.65); }
+}
+
+/* Modern Toggle Switch */
+.toggle-checkbox:checked {
+  right: 0;
+  border-color: #f97316;
+}
+.toggle-checkbox:checked + .toggle-label {
+  background-color: #f97316;
+  box-shadow: 0 0 20px rgba(249, 115, 22, 0.6);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #090d16;
+}
+::-webkit-scrollbar-thumb {
+  background: #334155;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #f97316;
+}
+
+/* Table styles */
+.custom-table th {
+  background-color: #1e293b;
+  color: #f97316;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-size: 0.75rem;
+}
+
+.custom-table tr {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  transition: background-color 0.2s;
+}
+
+.custom-table tr:hover {
+  background-color: rgba(249, 115, 22, 0.06);
+}
+
+/* Pulse animation for Live badge */
+@keyframes livePulse {
+  0% { transform: scale(0.95); opacity: 0.7; }
+  50% { transform: scale(1.1); opacity: 1; }
+  100% { transform: scale(0.95); opacity: 0.7; }
+}
+
+.badge-live-pulse {
+  animation: livePulse 2s infinite ease-in-out;
+}
