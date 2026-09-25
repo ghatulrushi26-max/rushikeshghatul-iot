@@ -1,0 +1,95 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="50%" stop-color="#0369a1"/>
+      <stop offset="100%" stop-color="#0284c7"/>
+    </linearGradient>
+    <linearGradient id="skinGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#f5d0b5"/>
+      <stop offset="100%" stop-color="#e2ab83"/>
+    </linearGradient>
+    <linearGradient id="suitGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e293b"/>
+      <stop offset="100%" stop-color="#0f172a"/>
+    </linearGradient>
+    <linearGradient id="tieGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0284c7"/>
+      <stop offset="100%" stop-color="#0369a1"/>
+    </linearGradient>
+    <linearGradient id="glowRing" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8"/>
+      <stop offset="50%" stop-color="#818cf8"/>
+      <stop offset="100%" stop-color="#f59e0b"/>
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="8" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+  </defs>
+
+  <!-- Background base -->
+  <rect width="400" height="400" rx="200" fill="url(#bgGrad)"/>
+
+  <!-- Circuit grid background circles -->
+  <circle cx="200" cy="200" r="185" fill="none" stroke="url(#glowRing)" stroke-width="3" stroke-dasharray="12 8" opacity="0.8"/>
+  <circle cx="200" cy="200" r="165" fill="none" stroke="#38bdf8" stroke-width="1.5" opacity="0.3"/>
+
+  <!-- Electrical circuit lines -->
+  <path d="M 60 200 H 120 L 140 220" stroke="#38bdf8" stroke-width="2" fill="none" opacity="0.5"/>
+  <circle cx="60" cy="200" r="4" fill="#38bdf8"/>
+  <circle cx="140" cy="220" r="3" fill="#f59e0b"/>
+
+  <path d="M 340 200 H 280 L 260 180" stroke="#38bdf8" stroke-width="2" fill="none" opacity="0.5"/>
+  <circle cx="340" cy="200" r="4" fill="#38bdf8"/>
+  <circle cx="260" cy="180" r="3" fill="#f59e0b"/>
+
+  <!-- Professional Portrait Vector -->
+  <!-- Shoulders & Coat -->
+  <path d="M 90 390 C 95 300, 140 270, 200 270 C 260 270, 305 300, 310 390 Z" fill="url(#suitGrad)"/>
+  
+  <!-- Shirt Collar -->
+  <polygon points="175,270 200,320 225,270 200,285" fill="#f8fafc"/>
+  
+  <!-- Tie -->
+  <polygon points="194,285 206,285 210,360 200,380 190,360" fill="url(#tieGrad)"/>
+  
+  <!-- Neck -->
+  <path d="M 180 230 H 220 V 280 H 180 Z" fill="url(#skinGrad)"/>
+  
+  <!-- Head & Face -->
+  <ellipse cx="200" cy="195" rx="55" ry="65" fill="url(#skinGrad)"/>
+  
+  <!-- Hair -->
+  <path d="M 145 190 C 145 125, 175 110, 200 110 C 235 110, 255 125, 255 185 C 245 160, 220 155, 200 155 C 175 155, 155 170, 145 190 Z" fill="#1e293b"/>
+  
+  <!-- Ears -->
+  <circle cx="144" cy="195" r="10" fill="#e2ab83"/>
+  <circle cx="256" cy="195" r="10" fill="#e2ab83"/>
+
+  <!-- Eyes -->
+  <ellipse cx="180" cy="192" rx="4" ry="3" fill="#1e293b"/>
+  <ellipse cx="220" cy="192" rx="4" ry="3" fill="#1e293b"/>
+  
+  <!-- Eyebrows -->
+  <path d="M 172 184 Q 180 180 188 184" stroke="#1e293b" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  <path d="M 212 184 Q 220 180 228 184" stroke="#1e293b" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+
+  <!-- Nose -->
+  <path d="M 200 190 V 205 H 205" stroke="#c28b65" stroke-width="2" fill="none" stroke-linecap="round"/>
+
+  <!-- Smile -->
+  <path d="M 188 220 Q 200 230 212 220" stroke="#99583b" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+
+  <!-- Engineer Lapel Badge -->
+  <g transform="translate(135, 320)">
+    <circle cx="12" cy="12" r="12" fill="#0284c7" stroke="#38bdf8" stroke-width="1.5"/>
+    <path d="M12 4 L7 13 H12 L11 20 L17 11 H12 Z" fill="#f59e0b"/>
+  </g>
+
+  <!-- Profile Badge / Label -->
+  <g transform="translate(110, 360)">
+    <rect width="180" height="28" rx="14" fill="#0b1120" stroke="#38bdf8" stroke-width="1.5" opacity="0.95"/>
+    <text x="90" y="18" fill="#38bdf8" font-family="system-ui, sans-serif" font-size="11" font-weight="700" text-anchor="middle" letter-spacing="1">RUSHIKESH D. GHATUL</text>
+  </g>
+</svg>

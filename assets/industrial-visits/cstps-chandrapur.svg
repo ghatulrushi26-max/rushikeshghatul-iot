@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 360" width="100%" height="100%">
+  <defs>
+    <linearGradient id="vGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a101f"/>
+      <stop offset="100%" stop-color="#14213d"/>
+    </linearGradient>
+  </defs>
+  <rect width="600" height="360" fill="url(#vGrad)"/>
+  <rect x="15" y="15" width="570" height="330" rx="14" fill="none" stroke="#0284c7" stroke-width="1.5" stroke-opacity="0.3"/>
+  
+  <!-- Industrial vector skyline/pylons -->
+  <g stroke="#38bdf8" stroke-width="2" opacity="0.4" fill="none">
+    <!-- Transmission Pylon -->
+    <path d="M 300 80 L 260 260 M 300 80 L 340 260"/>
+    <line x1="250" y1="130" x2="350" y2="130"/>
+    <line x1="240" y1="180" x2="360" y2="180"/>
+    <line x1="230" y1="230" x2="370" y2="230"/>
+    <line x1="270" y1="130" x2="330" y2="180"/>
+    <line x1="330" y1="130" x2="270" y2="180"/>
+    <line x1="260" y1="180" x2="340" y2="230"/>
+    <line x1="340" y1="180" x2="260" y2="230"/>
+  </g>
+
+  <!-- High-voltage transmission lines -->
+  <path d="M 0 130 Q 150 170 300 130 Q 450 170 600 130" stroke="#38bdf8" stroke-width="2" fill="none" opacity="0.6"/>
+  <path d="M 0 180 Q 150 220 300 180 Q 450 220 600 180" stroke="#38bdf8" stroke-width="2" fill="none" opacity="0.5"/>
+
+  <!-- Badge / Tags -->
+  <rect x="30" y="30" width="160" height="26" rx="13" fill="#0284c7" fill-opacity="0.2" stroke="#38bdf8" stroke-width="1"/>
+  <text x="110" y="47" fill="#38bdf8" font-family="system-ui, sans-serif" font-size="11" font-weight="700" text-anchor="middle" letter-spacing="1">INDUSTRIAL VISIT</text>
+  
+  <text x="570" y="47" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="13" text-anchor="end">GCOE Yavatmal Tour</text>
+
+  <!-- Titles -->
+  <text x="300" y="290" fill="#f8fafc" font-family="system-ui, sans-serif" font-size="20" font-weight="700" text-anchor="middle">CSTPS Chandrapur Thermal Power Station</text>
+  <text x="300" y="315" fill="#38bdf8" font-family="system-ui, sans-serif" font-size="14" text-anchor="middle">Chandrapur, Maharashtra</text>
+</svg>

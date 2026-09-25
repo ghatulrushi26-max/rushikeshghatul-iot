@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 320" width="100%" height="100%">
+  <defs>
+    <linearGradient id="pGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0b1329"/>
+      <stop offset="100%" stop-color="#111c38"/>
+    </linearGradient>
+  </defs>
+  <rect width="500" height="320" fill="url(#pGrad)"/>
+  <rect x="10" y="10" width="480" height="300" rx="16" fill="none" stroke="#1e293b" stroke-width="2"/>
+  
+  <!-- Technical Grid lines -->
+  <line x1="20" y1="80" x2="480" y2="80" stroke="#1e293b" stroke-dasharray="4 4"/>
+  <line x1="20" y1="240" x2="480" y2="240" stroke="#1e293b" stroke-dasharray="4 4"/>
+  
+  <!-- Center graphic -->
+  <circle cx="250" cy="180" r="70" fill="#1e293b" stroke="#ec4899" stroke-width="4"/>
+           <circle cx="250" cy="180" r="45" fill="#0f172a" stroke="#38bdf8" stroke-width="3"/>
+           <circle cx="250" cy="180" r="18" fill="#ec4899"/>
+           <line x1="250" y1="90" x2="250" y2="110" stroke="#38bdf8" stroke-width="4"/>
+           <line x1="250" y1="250" x2="250" y2="270" stroke="#38bdf8" stroke-width="4"/>
+           <line x1="160" y1="180" x2="180" y2="180" stroke="#38bdf8" stroke-width="4"/>
+           <line x1="320" y1="180" x2="340" y2="180" stroke="#38bdf8" stroke-width="4"/>
+
+  <!-- Header & Label -->
+  <text x="30" y="45" fill="#38bdf8" font-family="system-ui, sans-serif" font-size="14" font-weight="700" letter-spacing="1.5">ELECTRICAL ENGINEERING PROJECT</text>
+  <text x="470" y="45" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="12" text-anchor="end">GCOE Yavatmal Academic Lab</text>
+  
+  <text x="250" y="295" fill="#f8fafc" font-family="system-ui, sans-serif" font-size="16" font-weight="600" text-anchor="middle">Electrical Machines & Power Projects</text>
+</svg>

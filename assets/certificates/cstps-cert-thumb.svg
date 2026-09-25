@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 420" width="100%" height="100%">
+  <defs>
+    <linearGradient id="certBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0b1329"/>
+      <stop offset="100%" stop-color="#1e293b"/>
+    </linearGradient>
+  </defs>
+  <rect width="600" height="420" fill="url(#certBg)"/>
+  
+  <!-- Certificate Border -->
+  <rect x="20" y="20" width="560" height="380" rx="8" fill="none" stroke="#f59e0b" stroke-width="3" opacity="0.7"/>
+  <rect x="28" y="28" width="544" height="364" rx="6" fill="none" stroke="#38bdf8" stroke-width="1" opacity="0.4"/>
+  
+  <!-- Corner Ornaments -->
+  <path d="M 28 48 L 48 48 L 48 28" fill="none" stroke="#f59e0b" stroke-width="2"/>
+  <path d="M 572 48 L 552 48 L 552 28" fill="none" stroke="#f59e0b" stroke-width="2"/>
+  <path d="M 28 372 L 48 372 L 48 392" fill="none" stroke="#f59e0b" stroke-width="2"/>
+  <path d="M 572 372 L 552 372 L 552 392" fill="none" stroke="#f59e0b" stroke-width="2"/>
+
+  <!-- Badge / Emblem -->
+  <circle cx="300" cy="90" r="32" fill="#0369a1" fill-opacity="0.3" stroke="#38bdf8" stroke-width="2"/>
+  <path d="M300 70 L307 85 L324 87 L311 99 L315 115 L300 106 L285 115 L289 99 L276 87 L293 85 Z" fill="#f59e0b"/>
+
+  <!-- Certificate Headers -->
+  <text x="300" y="150" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="12" font-weight="600" letter-spacing="3" text-anchor="middle">CERTIFICATE OF PARTICIPATION & TRAINING</text>
+  <text x="300" y="190" fill="#f8fafc" font-family="system-ui, sans-serif" font-size="22" font-weight="700" text-anchor="middle">CSTPS Chandrapur Visit Certificate</text>
+  
+  <text x="300" y="225" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="14" text-anchor="middle">Presented To</text>
+  <text x="300" y="255" fill="#38bdf8" font-family="system-ui, sans-serif" font-size="20" font-weight="700" text-anchor="middle">RUSHIKESH D. GHATUL</text>
+
+  <line x1="200" y1="270" x2="400" y2="270" stroke="#334155" stroke-width="1"/>
+
+  <text x="300" y="300" fill="#cbd5e1" font-family="system-ui, sans-serif" font-size="14" text-anchor="middle">Chandrapur Super Thermal Power Station</text>
+  <text x="300" y="325" fill="#64748b" font-family="system-ui, sans-serif" font-size="12" text-anchor="middle">Category: Industrial Visit • Government College of Engineering, Yavatmal</text>
+
+  <!-- Seal icon on bottom right -->
+  <circle cx="500" cy="340" r="24" fill="#0b1120" stroke="#f59e0b" stroke-width="2"/>
+  <text x="500" y="344" fill="#f59e0b" font-family="system-ui, sans-serif" font-size="9" font-weight="700" text-anchor="middle">VERIFIED</text>
+</svg>
