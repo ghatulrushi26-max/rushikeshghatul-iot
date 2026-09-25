@@ -12,7 +12,7 @@ function createSimplePdf(title, subtitle, lines, outputPath) {
     '0 -25 Td',
   ];
   for (const line of lines) {
-    content.push('(' + line.replace(/[\(\)]/g, '') + ') Tj');
+    content.push('(' + line.replace(/[\(\git )]/g, '') + ') Tj');
     content.push('0 -18 Td');
   }
   content.push('ET');
